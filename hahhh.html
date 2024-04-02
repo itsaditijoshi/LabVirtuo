@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <title>Teacher Registration Form</title>
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+
+        }
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background: linear-gradient(to right, #ff6e7f,#bfe9ff);
+            color: white;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        input[type=text], input[type=email], input[type=password] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #ff6e7f;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #ff6e7f;
+
+        }
+        
+        .container {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(to right, #ff6e7f,#bfe9ff);
+        }
+        li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>LabVirtuo</h1>
+        <ul>
+            <li><a href="hhh.html">Home</a></li>
+            <li><a href="aboutus(maybefinal).html">About Us</a></li>
+        </ul>
+    </header>
+
+    <h2>Teacher Registration Form</h2>
+
+    <form action="https://formspree.io/f/mbjnzrgp" method="POST">
+        <div class="container">
+            <label for="firstname"><b>First Name</b></label>
+            <input type="text" placeholder="Enter First Name" name="firstname" required>
+
+            <label for="lastname"><b>Last Name</b></label>
+            <input type="text" placeholder="Enter Last Name" name="lastname" required>
+
+            <label for="email"><b>Email</b></label>
+            <input type="email" placeholder="Enter Email" name="email" required>
+
+            <label for="LAb Number"><b>Lab Name (Number)</b></label>
+            <input type="text" placeholder="Enter Lab Number" name="lab no" required>
+
+            <label for="date"><b>Date</b></label><br>
+            <input type="date" id="date" name="date" required>
+            <br><br>
+
+            <label for="timeslot"><b>Preferred Time Slot</b></label>
+            <select name="timeslot" required>
+                <option value="">Select a Time Slot</option>
+                <option value="10:00-12:00">Morning (10:00-12:00 AM)</option>
+                <option value="11:00-1:00">Morning (11:00-1:00 PM)</option>
+                <option value="12:00-2:00">Afternoon (12:00-2:00 PM)</option>
+                <option value="1:00-3:00">Afternoon (1:00-3:00 PM)</option>
+                <option value="2:00-4:00">Afternoon (2:00-4:00 PM)</option>
+                <option value="3:00-5:00">Afternoon (3:00-5:00 PM)</option>
+            </select>
+
+            <button type="submit">Register</button>
+        </div>
+    </form>
+
+    <script>
+        const form = document.querySelector('form');
+        form.addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            const responseData = await fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (responseData.ok) {
+                alert('Form submitted successfully!');
+                form.reset();
+            } else {
+                alert('Error submitting form!');
+            }
+        });
+    </script>
+</body>
+</html>

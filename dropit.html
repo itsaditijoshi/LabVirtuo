@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+  <title>Dropdown Menu</title>
+  <style>
+    body{
+      font-family: 'Poppins',sans-serif;
+      background: linear-gradient(to right, #ff6e7f,#bfe9ff);
+    }
+   
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    
+    .dropdown-btn {
+      padding: 30px;
+      background-color: #fff;
+      color: #000000;
+      border:none ;
+      cursor: pointer;
+     
+      width:500px;
+    }
+
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      
+      z-index: 1;
+    }
+
+    
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    
+    .dropdown-content a:hover {
+      background-color: #fff;
+    }
+
+    
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    header {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+            
+            font-size: 20px;
+        }
+        header button {
+            padding: 10px 20px;
+            background-color: #ff6e7f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        header button:hover {
+            background-color: #ff6e7f;
+        }
+        section {
+            padding: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        h1{
+            font-size:28px;
+        }
+
+  </style>
+</head>
+<body>
+    <header>
+        <h1>LabVirtuo</h1>
+            <nav>
+                <ul>
+                    
+                    
+                    <li><a href="aboutus(maybefinal).html">About us</a></li>
+                    <li><a href="feed.html">Feedback</a></li>
+                    <li><a href="hhh.html">Home</a></li>
+                    
+                </ul>
+            </nav>
+            
+        
+
+        
+    </header>
+
+    <section>
+        
+        <h2>Welcome to Information Technology Labs Section.</h2>
+        <p>This section contains information about the Information Technology labs.</p>
+    </section>
+
+
+<div class="dropdown">
+  
+  <button class="dropdown-btn">Information Technology Lab</button>
+  
+  <div class="dropdown-content">
+    
+    <a href="hahhh.html">S110-A</a>
+    <a href="hahhh.html">S110-B</a>
+    <a href="hahhh.html">S110-C</a>
+    <a href="hahhh.html">S109</a>
+    <a href="hahhh.html">S108</a>
+    <a href="hahhh.html">S107</a>
+    <a href="hahhh.html">S106</a>
+    <a href="hahhh.html">S105</a>
+    <a href="hahhh.html">S103</a>
+    <a href="hahhh.html">S102</a>
+    <a href="hahhh.html">S101</a>
+
+  </div>
+</div>
+
+</body>
+</html>

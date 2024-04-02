@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+  <title>Feedback</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      background: linear-gradient(to right,#ff6e7f,#bfe9ff);
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      margin-top: 40px;
+    }
+    form {
+      margin-top: 20px;
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      resize: vertical;
+    }
+    input[type="submit"] {
+      background-color: #ff6e7f;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #ff6e7f;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Feedback</h1>
+  </header>
+  <div class="container">
+    <h2>We'd Love to Hear from You!</h2>
+    <h2>Feedback Form</h2>
+    <form id="feedbackForm">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="message">Message:</label><br>
+    <form action="#" method="post">
+      <label for="feedback">Write your feedback:</label><br>
+      <textarea id="feedback" name="feedback" placeholder="Enter your feedback here..." required></textarea><br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+  <script>
+    document.getElementById('feedbackForm').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+
+        var formData = new FormData(this); 
+
+        
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'https://formspree.io/f/xayrbapd'); 
+        xhr.setRequestHeader('Accept', 'application/json');
+
+        xhr.onload = function() {
+            var jsonResponse = JSON.parse(xhr.responseText);
+            if (xhr.status === 200) {
+                    
+                    window.alert("Thank you for your feedback! We'll get back to you soon.");
+                    
+                    document.getElementById('feedbackForm').reset();
+                } else {
+                    
+                    window.alert("Failed to submit feedback. Please try again later.");
+                }
+        };
+
+        xhr.onerror = function() {
+            document.getElementById('message').innerText = "Failed to submit feedback: Network error";
+            
+        };
+
+        xhr.send(formData); 
+    });
+</script>
+
+</body>
+</html>
